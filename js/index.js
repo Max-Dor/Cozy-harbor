@@ -127,3 +127,5 @@ const showCards = document.querySelectorAll('.show__card');
     })
 })
 
+// Комичу с ноута
+
