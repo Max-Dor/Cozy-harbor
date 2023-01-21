@@ -1,0 +1,26 @@
+.advantage{
+    background-color: var(--marine-color);
+}
+.advantage__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 30px 0;
+}
+.advantage__items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.advantage__info{
+    font-size: 18px;
+    padding: 20px 0;
+}
+.advantage__svg{
+    color:#0000FF ;
+}
+.advantage__svg:hover{
+    color: #00FF00;
+}

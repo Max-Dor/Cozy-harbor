@@ -1,0 +1,38 @@
+.terrace__title,.studio__title,.tworoom__title,.threeroom__title{
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+.studio__prev,.terrace__info,.threeroom__info,.tworoom__info{
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.studio__sliderone,.studio__slidertwo,.tworoom__slider,.threeroom__sliderone,.threeroom__slidertwo,.terrace__slider{
+    width: 75%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.swiper-slide{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.tworoom,.terrace{
+    flex: 1 0 auto;
+}
+.terrace__slider,.tworoom__slider{
+    transform: translateY(25%);
+}
+.studio,.terrace,.threeroom,.tworoom{
+    width: 100%;
+    height: auto;
+    background-image: url(/image/wap3.jpg);
+    border: none;
+    overflow: hidden;
+}

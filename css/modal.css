@@ -1,0 +1,78 @@
+.modal__overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+.modal__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 520px;
+    width: 420px;
+    padding: 20px;
+    background-color: rgba(70, 130, 180, 0.75);
+    border-radius: 8px;
+    z-index: 10;
+}
+.modal__overlay--visible{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+    pointer-events: all;
+}
+
+.modal__cloce{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.modal__line{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform: rotate(45deg);
+    height: 2px;
+    background-color: #ffffff;
+}
+.modal__line::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    transform: rotate(90deg);
+    height: 2px;
+    background-color: #ffffff;
+}
+.modal__title{
+    font-size: 25px;
+    color: #ffffff;
+}
+.modal__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 98%;
+}
+.modal__input{
+    width: 100%;
+    margin-bottom: 8px;
+}
+.modal__message{
+    width: 100%;
+    margin-bottom: 8px;
+}
