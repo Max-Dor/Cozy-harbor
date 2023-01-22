@@ -128,4 +128,5 @@ const showCards = document.querySelectorAll('.show__card');
 })
 
 // Комичу с ноута
+// Слава яйцам . Переключился в ветку main
 
