@@ -88,6 +88,8 @@ const thirdThreeRoom = {
 
 
 const body = document.body;
+const cardOverflow = document.createElement('div');
+    cardOverflow.classList.add('card__overflow');
 const div = document.createElement('div');
     div.classList.add('cardholder');
     body.appendChild(div);
