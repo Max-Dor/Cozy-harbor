@@ -45,41 +45,49 @@ const firstStudioImg = ['/image/photos/studios/lev3_stu1_01.jpg','/image/photos/
 
 
 const firstStudio = {
+    category: 'studio',
     id: 1,
     title: 'Студия на третьем этаже.',
     image: firstStudioImg
     
 };
 const secondStudio = {
+    category: 'studio',
     id: 2,
     title: 'Студия на шестом этаже.',
     image: secondStudiosImg
 };
 const studioTerrace = {
+    category: 'terrace',
     id: 3,
     title: 'Cтудия на пятом этажею',
     image: studioTerraceImg
 };
 const studio25 = {
+    category: 'studio',
     id: 4,
     title: 'Студия на  третьем этаже.',
     image: studio25Img
 };
 const twoRooms = {
+    category: 'tworooms',
     id: 5,
     title: 'Двухкомнатные апартаменты на  третьем этаже. '
 };
 const firstThreeRoom = {
+    category: 'threerooms',
     id: 6,
     title: 'Трёхкомнатные апартаменты на пятом этаже.',
     image: firstThreeRoomImg
 };
 const secondThreeRoom = {
+    category: 'threerooms',
     id: 7,
     title: 'Трёхкомнатные апартаменты на шестом этаже.',
     image: secondThreeRoomImg
 };
 const thirdThreeRoom = {
+    category: 'threerooms',
     id: 8,
     title: 'Трёхкомнатные апартаменты на шестом этаже.',
     image: thirdThreeRoomImg 
@@ -90,9 +98,12 @@ const thirdThreeRoom = {
 const body = document.body;
 const cardOverflow = document.createElement('div');
     cardOverflow.classList.add('card__overflow');
-const div = document.createElement('div');
-    div.classList.add('cardholder');
-    body.appendChild(div);
+    body.appendChild(cardOverflow );
+const cardHolder = document.createElement('div');
+    cardHolder.classList.add('cardholder');
+    cardOverflow.appendChild(cardHolder);
+const closeCards =document.createElement('span');
+    closeCards.classList.add('close__cards');
 const cardsTitle = document.createElement('h2');
 const cardInfo = document.createElement('h3');
 const ulList = document.createElement('ul');
@@ -102,9 +113,10 @@ const ulList = document.createElement('ul');
     cardInfo.classList.add('card__info');
     cardInfo.textContent = "Информация о квартире";
     ulList.classList.add('card__list');
-    div.appendChild(cardsTitle);
-    div.appendChild(cardInfo);
-    div.appendChild(ulList);
+    cardHolder.appendChild(closeCards);
+    cardHolder.appendChild(cardsTitle);
+    cardHolder.appendChild(cardInfo);
+    cardHolder.appendChild(ulList);
 
 const listGenerator = `
     <li class="card__item">
@@ -118,7 +130,7 @@ const showCards = document.querySelectorAll('.show__card');
     showCards.forEach(function(e){
         e.addEventListener('click',()=>{
             if(e.dataset.target == 'studio'){
-                console.log('Прожато  studio')
+                console.log('Прожато Studio')
             }else if(e.dataset.target == 'tworooms'){
                 console.log('Прожато tworooms')
             }else if(e.dataset.target == 'threeroom'){
