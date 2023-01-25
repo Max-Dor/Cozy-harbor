@@ -81,13 +81,21 @@ const apartsList =[{
 }];
 
 
-apartsList.forEach(apart=>{
-    if(apart.category == 'studio'){
-        console.log(apart.info)
-    }
-})
+// apartsList.forEach(apart=>{
+//     if(apart.category == 'studio'){
+    
+//     
+// })
 
 const body = document.body;
+const cardMain = document.querySelector('.card__main');
+const cardsTitle = document.querySelector('.cards__title');
+const ulCards = document.querySelector('.ul__cards');
+const liCards = `<li>
+    <h3 class = "card__info"></h3>
+    <img src = "#">
+</li>`;
+ulCards.innerHTML = liCards;
 
 // function createCard(title){
 //     const overflow = document.createElement('div');
@@ -126,45 +134,45 @@ const body = document.body;
 
 
 
-function createCard(title,info){
-    const overflow = document.createElement('section');
-    const mainCard = document.createElement('div');
-    const span = document.createElement('span');
-    const cardTitle = document.createElement('h2');
-        overflow.classList.add('overflow');
-        mainCard.classList.add('main__card');
-        cardTitle.textContent = title;
-        span.classList.add('close__card');
-        body.appendChild(overflow);
-        overflow.appendChild(mainCard)
-        mainCard.appendChild(span);
-        mainCard.appendChild(cardTitle);
-        function apartCard(info){
-            const roomCard = document.createElement('div');
-            const  roomInfo = document.createElement('h3');
-                roomInfo.textContent = info;
-                roomCard.classList.add('room__card');
-                roomInfo.classList.add('room__info');
-                roomCard.appendChild(roomInfo);
-                mainCard.appendChild(roomCard);
-                function roomImageCreator(image){
-                    const ulList = document.createElement('ul');
-                    const imgList = document.createElement('li');
-                    const roomImg = document.createElement('img');
-                        roomImg.src = image;
-                        ulList.classList.add('ul__list');
-                        imgList.classList.add('img__list');
-                        roomImg.classList.add('room__img');
-                        roomCard.appendChild(ulList);
-                        ulList.appendChild(imgList);
-                        imgList.appendChild(roomImg);
+// function createCard(title,info){
+//     const overflow = document.createElement('section');
+//     const mainCard = document.createElement('div');
+//     const span = document.createElement('span');
+//     const cardTitle = document.createElement('h2');
+//         overflow.classList.add('overflow');
+//         mainCard.classList.add('main__card');
+//         cardTitle.textContent = title;
+//         span.classList.add('close__card');
+//         body.appendChild(overflow);
+//         overflow.appendChild(mainCard)
+//         mainCard.appendChild(span);
+//         mainCard.appendChild(cardTitle);
+//         function apartCard(info){
+//             const roomCard = document.createElement('div');
+//             const  roomInfo = document.createElement('h3');
+//                 roomInfo.textContent = info;
+//                 roomCard.classList.add('room__card');
+//                 roomInfo.classList.add('room__info');
+//                 roomCard.appendChild(roomInfo);
+//                 mainCard.appendChild(roomCard);
+//                 function roomImageCreator(image){
+//                     const ulList = document.createElement('ul');
+//                     const imgList = document.createElement('li');
+//                     const roomImg = document.createElement('img');
+//                         roomImg.src = image;
+//                         ulList.classList.add('ul__list');
+//                         imgList.classList.add('img__list');
+//                         roomImg.classList.add('room__img');
+//                         roomCard.appendChild(ulList);
+//                         ulList.appendChild(imgList);
+//                         imgList.appendChild(roomImg);
                 
-                }
-                roomImageCreator(apartsList.image);
-        }
-        apartCard(apartsList.info);
-}
-createCard('Название выбраного блока',apartsList.info);
+//                 }
+//                 roomImageCreator(apartsList.image);
+//         }
+//         apartCard(apartsList.info);
+// }
+// createCard('Название выбраного блока',apartsList.info);
 
 
 
