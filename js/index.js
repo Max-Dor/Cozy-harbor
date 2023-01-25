@@ -81,13 +81,11 @@ const apartsList =[{
 }];
 
 
-// apartsList.forEach(apart=>{
-//     if(apart.category == 'studio'){
-    
-//     
-// })
 
 const body = document.body;
+const showCard = document.querySelectorAll('.show__card');
+const createCard = document.querySelector('.card__overflow');
+const cardClose = document.querySelector('.card__close');
 const cardMain = document.querySelector('.card__main');
 const cardsTitle = document.querySelector('.cards__title');
 const ulCards = document.querySelector('.ul__cards');
@@ -97,132 +95,25 @@ const liCards = `<li>
 </li>`;
 ulCards.innerHTML = liCards;
 
-// function createCard(title){
-//     const overflow = document.createElement('div');
-//     const span = document.createElement('span');
-//     const cardTitle = document.createElement('h2');
-//         overflow.classList.add('card__overflow');
-//         cardTitle.textContent = title;
-//         span.classList.add('close__card');
-//         body.appendChild(overflow);
-//         overflow.appendChild(span);
-//         overflow.appendChild(cardTitle);
-// }
-// createCard('задница');
+function classToggle(){
+    createCard.classList.toggle('card__overflow--visible');
+}
 
-// function apartCard(info){
-//     const roomCard = document.createElement('div');
-//     const  roomInfo = document.createElement('h3');
-//         roomInfo.textContent = info
-//         roomCard.classList.add('room__card');
-//         roomInfo.classList.add('room__info');
-//         roomCard.appendChild(roomInfo);
-// }
-// apartCard(apartsList.info);
-
-// function roomImageCreator(image){
-//     const ulList = document.createElement('ul');
-//     const imgList = document.createElement('li');
-//     const roomImg = document.createElement('img');
-//         roomImg.src = image;
-//         ulList.classList.add('ul__list');
-//         imgList.classList.add('img__list');
-//         roomImg.classList.add('room__img');
-
-// }
-// roomImageCreator(apartsList.image);
-
-
-
-// function createCard(title,info){
-//     const overflow = document.createElement('section');
-//     const mainCard = document.createElement('div');
-//     const span = document.createElement('span');
-//     const cardTitle = document.createElement('h2');
-//         overflow.classList.add('overflow');
-//         mainCard.classList.add('main__card');
-//         cardTitle.textContent = title;
-//         span.classList.add('close__card');
-//         body.appendChild(overflow);
-//         overflow.appendChild(mainCard)
-//         mainCard.appendChild(span);
-//         mainCard.appendChild(cardTitle);
-//         function apartCard(info){
-//             const roomCard = document.createElement('div');
-//             const  roomInfo = document.createElement('h3');
-//                 roomInfo.textContent = info;
-//                 roomCard.classList.add('room__card');
-//                 roomInfo.classList.add('room__info');
-//                 roomCard.appendChild(roomInfo);
-//                 mainCard.appendChild(roomCard);
-//                 function roomImageCreator(image){
-//                     const ulList = document.createElement('ul');
-//                     const imgList = document.createElement('li');
-//                     const roomImg = document.createElement('img');
-//                         roomImg.src = image;
-//                         ulList.classList.add('ul__list');
-//                         imgList.classList.add('img__list');
-//                         roomImg.classList.add('room__img');
-//                         roomCard.appendChild(ulList);
-//                         ulList.appendChild(imgList);
-//                         imgList.appendChild(roomImg);
-                
-//                 }
-//                 roomImageCreator(apartsList.image);
-//         }
-//         apartCard(apartsList.info);
-// }
-// createCard('Название выбраного блока',apartsList.info);
-
-
-
-
-
-
-
-
-
-
-
-
-// const showCards = document.querySelectorAll('.show__card');
-//     showCards.forEach(function(e){
-//         e.addEventListener('click',()=>{
-//             if(e.dataset.target == 'studio'){
-//                 title = 'Студии...'
-//             }else if(e.dataset.target == 'tworooms'){
-//                 createHtml('2-х комнатные апартаменты...','Подробный интерьер квартиры ...')
-//             }else if(e.dataset.target == 'threeroom'){
-//                 createHtml('3-х комнатные апартаменты...','Внутренний интерьер квартир...')
-//             }else if(e.dataset.target == 'terrace'){
-//                 createHtml('Апартаменты с террасой...', 'Интерьер с великолепным видом на море...')
-//             }
-//     })
-// })
-
-// const overflow = document.createElement('div');
-//     overflow.classList.add('card__overflow');
-
-// function generateCards(title,info,image){
-//     return`
-//     <div class="cardholder"> 
-//         <span class="close__card"></span>
-//         <h2 class="cards__title">${title}</h2>
-//             <div class="card__list">
-//                 <h3 class="card__info">${info}</h3>
-//                 <ul class="ul__list">
-//                     <li class="img__list">
-//                         <img class="card__img" src="${image}">
-//                 </ul>
-//             </div>
-//         </div>
-//     `;
-// }
-// generateCards()
-
-// const apartsHTML = apartsList.map(apart =>{
-//     return generateCards(apart.title,apart.info,apart.image)
-// }).join('');
-
-// console.log(apartsHTML)
-
+showCard.forEach(function(e){
+    e.addEventListener('click',()=>{
+        if(e.dataset.target == 'studio'){
+            cardsTitle.textContent = 'Студии...';
+            classToggle();
+        }else if(e.dataset.target == 'tworooms'){
+            cardsTitle.textContent = '2-х комнатные апартаменты';
+            classToggle();
+        }else if(e.dataset.target == 'threeroom'){
+            cardsTitle.textContent = '3-х комнатные апартаменты';
+            classToggle();
+        }else if(e.dataset.target == 'terrace'){
+            cardsTitle.textContent = 'Апартаменты с террасой';
+            classToggle();
+        }
+    })
+})
+cardClose .addEventListener('click', classToggle);

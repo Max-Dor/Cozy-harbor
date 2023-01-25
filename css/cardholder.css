@@ -1,3 +1,42 @@
 .card__overflow{
-    display: block;
+    display: none;
 }
+.card__overflow--visible{
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.70);
+    z-index: 50;
+}
+
+.card__close{
+    position: relative;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.card__line{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform: rotate(45deg);
+    height: 2px;
+    background-color: #000;
+}
+.card__line::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    transform: rotate(90deg);
+    height: 2px;
+    background-color: #000;
+}
+

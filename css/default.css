@@ -15,8 +15,6 @@ body {
     letter-spacing: 0.04em;
     color: var(--main-color);
     height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 h1,h2{
     font-family: Montserrat, serif;
