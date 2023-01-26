@@ -89,8 +89,10 @@ const cardClose = document.querySelector('.card__close');
 const cardMain = document.querySelector('.card__main');
 const cardsTitle = document.querySelector('.cards__title');
 const ulCards = document.querySelector('.ul__cards');
+const cardInfo = document.querySelector('.card__info');
+let infoText = '';
 const liCards = `<li>
-    <h3 class = "card__info"></h3>
+    <h3 class = "card__info">${infoText}</h3>
     <img src = "#">
 </li>`;
 ulCards.innerHTML = liCards;
@@ -98,6 +100,13 @@ ulCards.innerHTML = liCards;
 function classToggle(){
     createCard.classList.toggle('card__overflow--visible');
 }
+
+apartsList.forEach(function(e){
+    if(e.id == 1){
+        infoText = e.info;
+    }
+    console.log(infoText)
+});
 
 showCard.forEach(function(e){
     e.addEventListener('click',()=>{
@@ -117,3 +126,6 @@ showCard.forEach(function(e){
     })
 })
 cardClose .addEventListener('click', classToggle);
+
+
+
