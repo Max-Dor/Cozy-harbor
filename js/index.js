@@ -30,6 +30,8 @@ const navigation = document.querySelector('.navigation');
     });
 
 
+const mainDiv = document.querySelector('.main__div');
+const apartments = Array.from(document.querySelectorAll('.aparts__item'));
 const apartsList =[{
     category: 'studio',
     id: 1,
@@ -80,52 +82,9 @@ const apartsList =[{
     image: ['/image/photos/room3/lev2_room3_07.jpg','/image/photos/room3/lev2_room3_08.jpg','/image/photos/room3/lev2_room3_09.jpg']
 }];
 
+console.log(apartments)
 
 
-const body = document.body;
-const showCard = document.querySelectorAll('.show__card');
-const createCard = document.querySelector('.card__overflow');
-const cardClose = document.querySelector('.card__close');
-const cardMain = document.querySelector('.card__main');
-const cardsTitle = document.querySelector('.cards__title');
-const ulCards = document.querySelector('.ul__cards');
-const cardInfo = document.querySelector('.card__info');
-let infoText = '';
-const liCards = `<li>
-    <h3 class = "card__info">${infoText}</h3>
-    <img src = "#">
-</li>`;
-ulCards.innerHTML = liCards;
-
-function classToggle(){
-    createCard.classList.toggle('card__overflow--visible');
-}
-
-apartsList.forEach(function(e){
-    if(e.id == 1){
-        infoText = e.info;
-    }
-    console.log(infoText)
-});
-
-showCard.forEach(function(e){
-    e.addEventListener('click',()=>{
-        if(e.dataset.target == 'studio'){
-            cardsTitle.textContent = 'Студии...';
-            classToggle();
-        }else if(e.dataset.target == 'tworooms'){
-            cardsTitle.textContent = '2-х комнатные апартаменты';
-            classToggle();
-        }else if(e.dataset.target == 'threeroom'){
-            cardsTitle.textContent = '3-х комнатные апартаменты';
-            classToggle();
-        }else if(e.dataset.target == 'terrace'){
-            cardsTitle.textContent = 'Апартаменты с террасой';
-            classToggle();
-        }
-    })
-})
-cardClose .addEventListener('click', classToggle);
 
 
 
