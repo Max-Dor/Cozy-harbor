@@ -1,3 +1,64 @@
 .card__overflow{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.80);
+}
+.card__overflow--active{
     display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(70, 130, 180, 0.80);
+}
+.card__close{
+    position: relative;
+    top: 18px;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.card__line{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform: rotate(45deg);
+    height: 2px;
+    background-color: #ffffff;
+}
+.card__line::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    transform: rotate(90deg);
+    height: 2px;
+    background-color: #ffffff;
+}
+.card__main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 600px;
+    margin: 30% 50%;
+    transform: translate(-50% ,-50%);
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.7);;
+    border: none;
+    border-radius: 6px;
+}
+.card__info{
+    font-size: 16px;
+    color: #ffffff;
 }
