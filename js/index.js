@@ -121,3 +121,6 @@ function getData(e){
 
 }
 apartments.forEach(key => key.addEventListener('click', getData))
+
+
+// Проверка. Заливаем или нет ...
