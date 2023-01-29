@@ -93,11 +93,13 @@ const getMarkup = (apartmentData)=>{
             return `
                 <div class ="apart">
                     <h2 class ="card__info">${data.title}</h2>
-                    <img class = "list__img" src = ${data.image.map(data =>{
+                    <ul class ="list">
+                        <img class = "list__img" src = ${data.image.map(data =>{
                         return`
-                        <img class = "list__img-item" src = ${data}>
-                        `
-                    }).join('')}>
+                            <img class = "list__img-item" src = ${data}>
+                            `
+                        }).join('')}>
+                    </ul>
     `;
     }).join('');
 }
@@ -121,6 +123,3 @@ function getData(e){
 
 }
 apartments.forEach(key => key.addEventListener('click', getData))
-
-
-// Проверка. Заливаем или нет ...
