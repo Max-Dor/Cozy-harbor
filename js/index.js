@@ -88,19 +88,31 @@ const data = [{
 
 
 
-const getMarkup = (apartmentData)=>{
-    return apartmentData.map( data =>{
-            return `
-                <div class ="apart">
-                    <h2 class ="card__info">${data.title}</h2>
-                    <img class = "list__img" src = ${data.image.map(data =>{
-                        return`
-                        <img class = "list__img-item" src = ${data}>
+const getMarkup = function(){
+        return`
+        <div class="card__overflow ">
+            <button class ="card__close"><span class ="card__line"></span></button>
+                <div class="card__main">
+                    ${data.map(data=>{
+                        return `
+                            <div class="apart">
+                                <h3 class="card__info">${data.title}</h3>
+                                <ul class="list">
+                                    <img class="list__img" src = ${data.image.map(data=>{
+                                        return`
+                                            <img class = "list__img-item" src = ${data}>
+                                        `
+                                    })}>
+                                </ul>
+                            </div>
                         `
-                    }).join('')}>
-    `;
-    }).join('');
-}
+                    })}
+                </div>
+        </div>
+        `;
+};
+
+
 const getUlMarkup = function ( ){
     return `
         <li class ="list__card">
@@ -117,7 +129,7 @@ function getData(e){
     getMarkup(apartmentData);
     const html = getMarkup(apartmentData);
 
-    cardMain.innerHTML = html;
+    mainDiv.innerHTML = html;
 
 }
 apartments.forEach(key => key.addEventListener('click', getData))
