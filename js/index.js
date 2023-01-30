@@ -133,3 +133,18 @@ function getData(e){
 
 }
 apartments.forEach(key => key.addEventListener('click', getData))
+
+
+// const  getMarkup = function(){
+//     return `
+//     <div class="main__div">
+//         <div class="card__overflow card__overflow--active">
+//             <button class ="card__close"><span class ="card__line"></span></button>
+//                 <div class="card__main">
+                
+//                 </div>
+//         </div>
+//     </div>  
+
+//     `;
+// }
