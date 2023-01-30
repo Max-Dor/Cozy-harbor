@@ -32,7 +32,6 @@ const navigation = document.querySelector('.navigation');
 
 const mainDiv = document.querySelector('.main__div');
 const apartments = Array.from(document.querySelectorAll('.show__card'));
-const cardClose = document.querySelector('.card__close');
 
 const data = [{
     category: 'studio',
@@ -112,15 +111,18 @@ const getMarkup = function(apartmentData){
 };
 
 function getData(e){
+    mainDiv.classList.remove('main__div--hide');
     const{dataset} = e.target;
     const {target} = dataset;
     const apartmentData = data.filter(d => d.category === target);
     const html = getMarkup(apartmentData);
+
     mainDiv.innerHTML = html;
 
+    const cardClose = document.querySelector('.card__close');
+    cardClose.addEventListener('click', ()=>{
+        mainDiv.classList.add('main__div--hide');
+    });
 }
 apartments.forEach(key => key.addEventListener('click', getData));
-cardClose.addEventListener('click', ()=>{
-    mainDiv.classList.add('main__div--hide');
-});
 
