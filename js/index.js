@@ -104,7 +104,7 @@ const getMarkup = function(apartmentData){
                                 </ul>
                             </div>
                         `
-                    })}
+                    }).join('')}
                 </div>
         </div>
         `;
@@ -118,7 +118,6 @@ function getData(e){
     const html = getMarkup(apartmentData);
 
     mainDiv.innerHTML = html;
-
     const cardClose = document.querySelector('.card__close');
     cardClose.addEventListener('click', ()=>{
         mainDiv.classList.add('main__div--hide');
