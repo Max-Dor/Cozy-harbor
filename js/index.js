@@ -31,9 +31,8 @@ const navigation = document.querySelector('.navigation');
 
 
 const mainDiv = document.querySelector('.main__div');
-const cardMain = document.querySelector('.card__main');
 const apartments = Array.from(document.querySelectorAll('.show__card'));
-
+const cardClose = document.querySelector('.card__close');
 
 const data = [{
     category: 'studio',
@@ -88,12 +87,12 @@ const data = [{
 
 
 
-const getMarkup = function(){
+const getMarkup = function(apartmentData){
         return`
-        <div class="card__overflow ">
+        <div class="card__overflow">
             <button class ="card__close"><span class ="card__line"></span></button>
                 <div class="card__main">
-                    ${data.map(data=>{
+                    ${apartmentData.map(data=>{
                         return `
                             <div class="apart">
                                 <h3 class="card__info">${data.title}</h3>
@@ -102,7 +101,7 @@ const getMarkup = function(){
                                         return`
                                             <img class = "list__img-item" src = ${data}>
                                         `
-                                    })}>
+                                    }).join('')}
                                 </ul>
                             </div>
                         `
@@ -112,39 +111,16 @@ const getMarkup = function(){
         `;
 };
 
-
-const getUlMarkup = function ( ){
-    return `
-        <li class ="list__card">
-            <img class ="list__img src = "${data.image}">
-        </li>
-    `;
-}
-
 function getData(e){
     const{dataset} = e.target;
     const {target} = dataset;
-
     const apartmentData = data.filter(d => d.category === target);
-    getMarkup(apartmentData);
     const html = getMarkup(apartmentData);
-
     mainDiv.innerHTML = html;
 
 }
-apartments.forEach(key => key.addEventListener('click', getData))
+apartments.forEach(key => key.addEventListener('click', getData));
+cardClose.addEventListener('click', ()=>{
+    mainDiv.classList.add('main__div--hide');
+});
 
-
-// const  getMarkup = function(){
-//     return `
-//     <div class="main__div">
-//         <div class="card__overflow card__overflow--active">
-//             <button class ="card__close"><span class ="card__line"></span></button>
-//                 <div class="card__main">
-                
-//                 </div>
-//         </div>
-//     </div>  
-
-//     `;
-// }

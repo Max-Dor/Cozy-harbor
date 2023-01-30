@@ -1,20 +1,15 @@
-.card__overflow{
+.main__div--hide{
     display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(70, 130, 180, 0.80);
 }
-.card__overflow--active{
-    display:none;
+.card__overflow{
+    display:block;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(70, 130, 180, 0.80);
+    background-color: rgba(255 , 255 , 255 ,0.90);
+    z-index: 50;
 }
 .card__close{
     position: relative;
@@ -33,7 +28,7 @@
     width: 100%;
     transform: rotate(45deg);
     height: 2px;
-    background-color: #ffffff;
+    background-color: #000;
 }
 .card__line::before{
     position: absolute;
@@ -42,7 +37,7 @@
     width: 100%;
     transform: rotate(90deg);
     height: 2px;
-    background-color: #ffffff;
+    background-color: #000;
 }
 .card__main{
     display: flex;
@@ -51,14 +46,32 @@
     width: 400px;
     height: 600px;
     margin: 30% 50%;
+    padding: 14px;
     transform: translate(-50% ,-50%);
     opacity: 1;
     visibility: visible;
-    background-color: rgba(0, 0, 0, 0.7);;
+    background-color:rgba(70, 130, 180, 0.60);
     border: none;
     border-radius: 6px;
 }
+.apart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+}
 .card__info{
     font-size: 16px;
-    color: #ffffff;
+    color: #000;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+}
+.list__img-item{
+    width: 100px;
+    height: 40px;
+}
+.list__img{
+    display: none;
 }
