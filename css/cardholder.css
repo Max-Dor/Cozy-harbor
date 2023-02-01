@@ -79,7 +79,11 @@
     height: 80px;
     border: none;
     overflow: hidden;
-    transform: scale(1);
+    transition: transform 1s ease-in-out;
+}
+.list__img-item:hover{
+    width: 220px;
+    transform: scale(1,2);
 }
 .list__img{
     display: none;
