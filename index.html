@@ -245,11 +245,11 @@
                 <div class="modal__body" data-target="form-popup">
                     <button class="modal__cloce"><span class="modal__line"></span></button>
                     <h3 class="modal__title">Заполните форму</h3>
-                    <form action="send.php"  class="modal__form" autocomplete="off" >
+                    <form action="send.php" method="POST" class="modal__form" autocomplete="off" >
                         <input type="text" class="input modal__input" placeholder="Введите имя*" name="name" required minlength="2">
                         <input type="text" class="input modal__input" placeholder="Номер телефона*" name="phone" required minlength="6" >
                         <input type="text" class="input modal__input" placeholder="Email*" name="email" required minlength="6" >
-                        <textarea  class=" message modal__message"  cols="30" rows="10" placeholder="Коментарий" name="message" required minlength="10" ></textarea>
+                        <textarea  class=" message modal__message"  placeholder="Коментарий" name="message" required minlength="10" ></textarea>
                         <div class="modal__down-side">
                         <button class="button modal__button" type="submit">Отправить</button>
                         </div>
